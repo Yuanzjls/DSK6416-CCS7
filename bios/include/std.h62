@@ -1,0 +1,36 @@
+;
+;  Copyright 2003 by Texas Instruments Incorporated.
+;  All rights reserved. Property of Texas Instruments Incorporated.
+;  Restricted rights to use, duplicate or disclose this code are
+;  granted through contract.
+;  
+;
+; "@(#) DSP/BIOS 4.90.270 01-13-05 (barracuda-o07)"
+;
+;  ======== std.h62 ========
+;
+;  This header file provides a means of defining assembler or
+;  processor-specific values.
+;
+
+	.if ($isdefed("STD_") = 0)    ; prevent multiple includes of this file
+STD_	.set	1
+
+STD_TARGWORDBITS	.set 32
+STD_TARGWORDMAUS	.set 4 
+STD_TARGCHARMAUS	.set 1 
+STD_TARGALIGN		.set 8
+STD_DSPFAMILY		.set 62
+
+	    .if .TMS320C6200 
+STD_FLOATDSP		.set 0		; does this DSP support float?
+	    .elseif .TMS320C6400
+STD_FLOATDSP		.set 0		; does this DSP support float?
+	    .elseif .TMS320C6700
+STD_FLOATDSP		.set 1		; does this DSP support float?
+	    .else
+		.emsg "Unknown DSP family"
+	    .endif
+
+
+	.endif				; .if $isdefed("STD_") = 0)

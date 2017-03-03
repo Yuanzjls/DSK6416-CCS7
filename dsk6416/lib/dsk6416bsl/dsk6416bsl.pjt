@@ -1,0 +1,51 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectName="dsk6416bslx"
+ProjectDir="C:\CCStudio\c6000\dsk6416\lib\dsk6416bsl\"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="dsk6416.c"
+Source="dsk6416_aic23_closecodec.c"
+Source="dsk6416_aic23_loopback.c"
+Source="dsk6416_aic23_mute.c"
+Source="dsk6416_aic23_opencodec.c"
+Source="dsk6416_aic23_outgain.c"
+Source="dsk6416_aic23_powerdown.c"
+Source="dsk6416_aic23_read.c"
+Source="dsk6416_aic23_registers.c"
+Source="dsk6416_aic23_setfreq.c"
+Source="dsk6416_aic23_write.c"
+Source="dsk6416_dip.c"
+Source="dsk6416_flash_checksum.c"
+Source="dsk6416_flash_erase.c"
+Source="dsk6416_flash_read.c"
+Source="dsk6416_flash_write.c"
+Source="dsk6416_led.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -oDebug\dsk6416bsl.lib
+
+["Archiver" Settings: "Release"]
+Options=-r -o.\Release\dsk6416bsl.lib
+
+["Compiler" Settings: "Debug"]
+Options=-q -fr"C:\CCStudio\c6000\dsk6416\lib\dsk6416bsl\Debug" -i"..\..\include" -d"_DEBUG" -d"CHIP_6416" -mu -ml3 -ms2 -mv6400
+
+["Compiler" Settings: "Release"]
+Options=-g -q -fr"C:\CCStudio\c6000\dsk6416\lib\dsk6416bsl\Release" -i"..\..\include" -d"_DEBUG" -d"CHIP_6416" -ml3 -mv6400
+
+["DspBiosBuilder" Settings: "Debug"]
+Options=-v6x
+
+["DspBiosBuilder" Settings: "Release"]
+Options=-v6x
+
